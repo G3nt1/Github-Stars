@@ -12,12 +12,10 @@ def get_stars_count(owner, repo, access_token, previous_stars_count):
         stars_count = repository.stargazers_count
         print(f"Repository: {repository.name}, Stars: {stars_count}")
 
-        # Check if the stars count has changed
         if repository.name == repo and stars_count != previous_stars_count.get(repo):
             print(f"The number of stars for {owner}/{repo} has changed! New count: {stars_count}")
             changes_detected = True
 
-        # Update the previous_stars_count
         previous_stars_count[repository.name] = stars_count
 
     return changes_detected
@@ -26,9 +24,8 @@ def get_stars_count(owner, repo, access_token, previous_stars_count):
 def main():
     owner = 'G3nt1'
     repo = 'Flask-sport'
-    access_token = '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'  # Replace with your actual GitHub access token
+    access_token = ''  # Replace with your actual GitHub access token
 
-    # Initialize a dictionary to store the previous stars count for each repository
     previous_stars_count = {}
 
     while True:

@@ -3,7 +3,7 @@ import requests
 from github import Github
 
 username = 'G3nt1'
-access_token = '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'
+access_token = ''
 url = f"https://api.github.com/users/{username}"
 user_data = requests.get(url).json()
 
